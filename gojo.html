@@ -1,0 +1,87 @@
+<html></html>
+    <body>
+        <div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1>Will gojo come back?</h1>
+            <img id="valentineImage" src="https://media.tenor.com/8FKTLWbI3tcAAAAi/ma-gurlll-gojo.gif" alt="KING" style="max-width: 300px; height: auto;">
+            <br/>
+            <br/>
+            <br/>
+            <button id="yesButton">Yes</button>
+            <button id="no">No</button>
+        </div>
+
+        <style>
+            body {
+                background: linear-gradient(to bottom, #8309b7, #614a77);
+            }
+            div {
+                text-align: center;
+                vertical-align: middle;
+            }
+            h1 {
+                color: #1fc28c;
+            }
+            #yesButton {
+                background-color: #d6061e;
+                transition: transform 0.3s;
+                margin-right: 10px;
+                width: 120px;
+                font-size: 30px;
+                height: 40px;
+                color: #fff;
+                margin-left: -140px;
+            }
+            #no {
+                position: absolute;
+                background-color: #0843f4;
+                transition: transform 0.3s;
+                margin-left: 10px;
+                width: 120px;
+                /* font-size: 30px; */
+                height: 40px;
+                color: #fff;
+            }
+        </style>
+        <script>
+            document.getElementById("yesButton").addEventListener("click", showAlert);
+
+            function showAlert() {
+                alert("OFC HE ISS");
+            }
+
+            var yesButton = document.getElementById("yesButton");
+            var no = document.getElementById("no");
+            var valentineImage = document.getElementById("valentineImage");
+
+            var noTexts = ["Are you sure?", "One eye theory", "Nah Id win", "Stop doubting", "Trust gege", "ITS GOJOO"];
+            var imageSources = ["https://media1.tenor.com/m/_kh1YMjLNDIAAAAC/gojo-satoru-gojo-satoru-dead.gif", "https://media.tenor.com/hW_mTYy_zS4AAAAi/gojo-satoru.gif", "https://media1.tenor.com/m/V83UAPDvX-cAAAAC/gojo-gojo-satoru.gif", "https://media.tenor.com/mhzEOBZwKh4AAAAi/gojo-perchance.gif"];
+
+            no.addEventListener("click", change);
+
+            function change() {
+                var randomIndex = Math.floor(Math.random() * noTexts.length);
+                var randomText = noTexts[randomIndex];
+                no.innerText = randomText;
+
+                var i = Math.floor(Math.random() * 1000) + 1;
+                var j = Math.floor(Math.random() * 700) + 1;
+                no.style.left = i + "px";
+                no.style.top = j + "px";
+
+                var currentWidth = yesButton.offsetWidth;
+                var currentHeight = yesButton.offsetHeight
+                yesButton.style.width = currentWidth + 30 + "px";
+                yesButton.style.height = currentHeight + 10 + "px";
+
+                var randomImageIndex = Math.floor(Math.random() * imageSources.length);
+                valentineImage.src = imageSources[randomImageIndex];
+            }
+        </script>
+    </body>
+</html>
